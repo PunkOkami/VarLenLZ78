@@ -5,30 +5,26 @@ Decryption code also extended buffer size when reading encoded file. Currently, 
 18 446 744 073 709 551 615 different codes. 
 
 ## Enwik9
-Performance was tested using [enwik9](https://mattmahoney.net/dc/text.html) compression benchmark. With result file being X bytes long, 
-it placed VarLenLZ78 on XXX position. It was not added to the list yet, but I contacted the author asking about it.
+Performance was tested using [enwik9](https://mattmahoney.net/dc/text.html) compression benchmark. With result file being XXX bytes long, 
+it placed VarLenLZ78 on YYY position with 38.86% compression rate. It was not added to the list yet, but I contacted the author asking about it.
 
 ## Installation
 Clone code repo...
 ```zsh
-git clone git@github.com:PunkOkami/VarLenLZ78.git
-```
-...get all dependecies from go.mod file...
-```zsh
-got mod download
+git clone https://github.com/PunkOkami/VarLenLZ78.git
 ```
 ...and build the binary
 ```zsh
-go build vllz78.go
+go build -o vllz78 vllz78.go
 ```
 You are good too go!
 
 ## Usage
 ```zsh
 # Compresses with default output file name
-vllz78 -i test.txt
+./vllz78 -i test.txt
 # Decompresses with default output file name
-vllz78 -d test.vl78
+./vllz78 -d test.vl78
 ```
 ## Options
 - i/input_file STRING    relative path to input file
@@ -36,6 +32,3 @@ vllz78 -d test.vl78
 - d/decompress           decompress input file
 - h/help                 help
 - v/verbose              verbose mode
-
-# IMPORTANT
-WIP IN TESTING 
