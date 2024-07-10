@@ -28,11 +28,17 @@ func print_mem_usage() {
 func lz78_encoder(input_file_path string, encoded_file_path string) error {
 	
 	var x = 0.0
+	var total float64
 	
 	input_file, err := os.Open(input_file_path)
 	if err != nil {
 		return err
 	}
+	stats, err := input_file.Stat()
+	if err != nil {
+		return err
+	}
+	total = float64(stats.Size())
 	output_file, err := os.Create(encoded_file_path)
 	if err != nil {
 		return err
@@ -76,6 +82,10 @@ func lz78_encoder(input_file_path string, encoded_file_path string) error {
 			i++
 			
 			text = ""
+		}
+		perc := math.Round(x/total*10000.0) / 100.0
+		if math.Mod(perc, 10) == 0 {
+			fmt.Printf("Compressed %v percent of input file. Number of bytes needed: %v\r", perc, math.Log2(float64(i+1))/8)
 		}
 	}
 	
