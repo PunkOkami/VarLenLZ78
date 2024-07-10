@@ -84,7 +84,9 @@ func lz78_encoder(input_file_path string, encoded_file_path string) error {
 			text = ""
 		}
 		perc := math.Round(x/total*10000.0) / 100.0
-		fmt.Printf("Compressed %v percent of input file. Number of bytes needed: %v\r", perc, math.Log2(float64(i+1))/8)
+		if math.Mod(perc, 10) == 0 {
+			fmt.Printf("Compressed %v percent of input file. Number of bytes needed: %v\r", perc, math.Log2(float64(i+1))/8)
+		}
 	}
 	
 	if err != io.EOF {
