@@ -5,8 +5,8 @@ Decryption code also extended buffer size when reading encoded file. Currently, 
 18 446 744 073 709 551 615 different codes. 
 
 ## Enwik9
-Performance was tested using [enwik9](https://mattmahoney.net/dc/text.html) compression benchmark. With result file being XXX bytes long, 
-it placed VarLenLZ78 on YYY position with 38.86% compression rate. It was not added to the list yet, but I contacted the author asking about it.
+Performance was tested using [enwik9](https://mattmahoney.net/dc/text.html) compression benchmark. With result file being 390044948 bytes long, 
+it placed VarLenLZ78 on 172nd position with 39.01% compression rate. It was not added to the list yet, but I contacted the author asking about it.
 
 ## Installation
 Clone code repo...
