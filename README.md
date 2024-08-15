@@ -17,7 +17,7 @@ git clone https://github.com/PunkOkami/VarLenLZ78.git
 ```zsh
 go build -o vllz78 vllz78.go
 ```
-You are good too go!
+You are good to go!
 
 ## Usage
 ```zsh

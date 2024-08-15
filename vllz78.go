@@ -205,7 +205,8 @@ func main() {
 	
 	err := ff.Parse(flag_set, os.Args[1:])
 	if err != nil {
-		fmt.Println("Paring arguments failed: ", err)
+		fmt.Println("Parsing arguments failed: ", err)
+		os.Exit(1)
 	}
 	
 	if *help {
@@ -214,7 +215,7 @@ func main() {
 	}
 	
 	if *input_file == "" {
-		fmt.Println("No input file specified!\n")
+		fmt.Println("No input file specified!")
 		fmt.Printf("%s\n", ffhelp.Flags(flag_set))
 		os.Exit(1)
 	}
@@ -231,6 +232,7 @@ func main() {
 		err = lz78_decoder(*input_file, *output_file)
 		if err != nil {
 			fmt.Printf("Error decoding file %v : %v\n", *input_file, err.Error())
+			os.Exit(1)
 		}
 		if *verbose {
 			print_mem_usage()
@@ -240,6 +242,7 @@ func main() {
 		err = lz78_encoder(*input_file, *output_file)
 		if err != nil {
 			fmt.Printf("Error encoding file %v : %v\n", *input_file, err.Error())
+			os.Exit(1)
 		}
 		if *verbose {
 			print_mem_usage()
