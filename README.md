@@ -6,7 +6,7 @@ Decryption code also extended buffer size when reading encoded file. Currently, 
 
 ## Enwik9
 Performance was tested using [enwik9](https://mattmahoney.net/dc/text.html) compression benchmark. With result file being 390044948 bytes long, 
-it placed VarLenLZ78 on 172nd position with 39.01% compression rate. It was not added to the list yet, but I contacted the author asking about it.
+it placed VarLenLZ78 on 172nd position with 39.01% compression rate. It was not added to the list yet.
 
 ## Installation
 Clone code repo...
